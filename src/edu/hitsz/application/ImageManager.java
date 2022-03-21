@@ -1,10 +1,14 @@
 package edu.hitsz.application;
 
 
+import edu.hitsz.aircraft.EliteEnemy;
 import edu.hitsz.aircraft.HeroAircraft;
 import edu.hitsz.aircraft.MobEnemy;
 import edu.hitsz.bullet.EnemyBullet;
 import edu.hitsz.bullet.HeroBullet;
+import prop.FireSupplyProp;
+import prop.BombSupplyProp;
+import prop.HealthSupplyProp;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -32,21 +36,33 @@ public class ImageManager {
     public static BufferedImage HERO_BULLET_IMAGE;
     public static BufferedImage ENEMY_BULLET_IMAGE;
     public static BufferedImage MOB_ENEMY_IMAGE;
+    public static BufferedImage ELITE_ENEMY_IMAGE;
+    public static BufferedImage FIRE_SUPPLY_PROP;
+    public static BufferedImage BOMB_SUPPLY_PROP;
+    public static BufferedImage HEALTH_SUPPLY_PROP;
 
     static {
         try {
 
             BACKGROUND_IMAGE = ImageIO.read(new FileInputStream("src/images/bg.jpg"));
-
+            ELITE_ENEMY_IMAGE = ImageIO.read(new FileInputStream("src/images/elite.png"));
             HERO_IMAGE = ImageIO.read(new FileInputStream("src/images/hero.png"));
             MOB_ENEMY_IMAGE = ImageIO.read(new FileInputStream("src/images/mob.png"));
             HERO_BULLET_IMAGE = ImageIO.read(new FileInputStream("src/images/bullet_hero.png"));
             ENEMY_BULLET_IMAGE = ImageIO.read(new FileInputStream("src/images/bullet_enemy.png"));
+            FIRE_SUPPLY_PROP = ImageIO.read(new FileInputStream("src/images/prop_bullet.png"));
+            BOMB_SUPPLY_PROP = ImageIO.read(new FileInputStream("src/images/prop_bomb.png"));
+            HEALTH_SUPPLY_PROP = ImageIO.read(new FileInputStream("src/images/prop_blood.png"));
 
             CLASSNAME_IMAGE_MAP.put(HeroAircraft.class.getName(), HERO_IMAGE);
             CLASSNAME_IMAGE_MAP.put(MobEnemy.class.getName(), MOB_ENEMY_IMAGE);
             CLASSNAME_IMAGE_MAP.put(HeroBullet.class.getName(), HERO_BULLET_IMAGE);
             CLASSNAME_IMAGE_MAP.put(EnemyBullet.class.getName(), ENEMY_BULLET_IMAGE);
+            CLASSNAME_IMAGE_MAP.put(EliteEnemy.class.getName(), ELITE_ENEMY_IMAGE);
+            CLASSNAME_IMAGE_MAP.put(FireSupplyProp.class.getName(),FIRE_SUPPLY_PROP);
+            CLASSNAME_IMAGE_MAP.put(BombSupplyProp.class.getName(),BOMB_SUPPLY_PROP);
+            CLASSNAME_IMAGE_MAP.put(HealthSupplyProp.class.getName(),HEALTH_SUPPLY_PROP);
+
 
         } catch (IOException e) {
             e.printStackTrace();
