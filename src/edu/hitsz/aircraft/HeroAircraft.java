@@ -15,7 +15,7 @@ import java.util.List;
 public class HeroAircraft extends AbstractAircraft {
 
     /** 攻击方式 */
-    private int shootNum = 5;     //子弹一次发射数量
+    public int shootNum = 5;     //子弹一次发射数量
     private int power = 30;       //子弹伤害
     private int direction = -1;  //子弹射击方向 (向上发射：1，向下发射：-1)
 
